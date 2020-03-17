@@ -1,1 +1,1 @@
-web: crud
+web: cmd
