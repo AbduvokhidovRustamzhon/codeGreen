@@ -12,21 +12,41 @@ import (
 	"github.com/AbduvokhidovRustamzhon/codeGreen/pkg/crud/services/burgers"
 	"github.com/AbduvokhidovRustamzhon/codeGreen/pkg/crud/services/files"
 	"github.com/jackc/pgx/v4/pgxpool"
+	"log"
 	"net"
 	"net/http"
 	"path/filepath"
+	"pkg/crud/services"
 )
 
 var (
-	host = flag.String("host", "0.0.0.0", "Server host")
-	port = flag.String("port", "2511", "Server port")
-	dsn  = flag.String("dsn", "postgres://user:pass@192.168.99.100:5432/app", "Postgres DSN")
+	hostF   = flag.String("host", "", "Server host")
+	portF   = flag.String("port", "", "Server port")
+	dsnF    = flag.String("dsn", "", "Postgres DSN")
+)
+var (
+	EHOST   = "HOST"
+	EPORT   = "PORT"
+	EDSN    = "DATABASE_URL"
 )
 
 func main() {
 	flag.Parse()
-	addr := net.JoinHostPort(*host, *port)
-	start(addr, *dsn)
+
+	host, ok := FlagOrEnv(*hostF, EHOST)
+	if !ok {
+		log.Panic("can't get host")
+	}
+	port, ok := FlagOrEnv(*portF, EPORT)
+	if !ok {
+		log.Panic("can't get port")
+	}
+	dsn, ok := FlagOrEnv(*dsnF, EDSN)
+	if !ok {
+		log.Panic("can't get dsn")
+	}
+	addr := net.JoinHostPort(host, port)
+	start(addr, dsn)
 }
 
 func start(addr string, dsn string) {
