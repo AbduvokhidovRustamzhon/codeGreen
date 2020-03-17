@@ -2,7 +2,7 @@ package app
 
 import (
 	"context"
-	"crud/pkg/crud/models"
+	"github.com/AbduvokhidovRustamzhon/codeGreen/pkg/crud/models"
 	"html/template"
 	"io/ioutil"
 	"log"

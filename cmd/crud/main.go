@@ -7,10 +7,10 @@ package main
 
 import (
 	"context"
-	"crud/cmd/crud/app"
-	"crud/pkg/crud/services/burgers"
-	"crud/pkg/crud/services/files"
 	"flag"
+	"github.com/AbduvokhidovRustamzhon/codeGreen/cmd/crud/app"
+	"github.com/AbduvokhidovRustamzhon/codeGreen/pkg/crud/services/burgers"
+	"github.com/AbduvokhidovRustamzhon/codeGreen/pkg/crud/services/files"
 	"github.com/jackc/pgx/v4/pgxpool"
 	"net"
 	"net/http"

@@ -1,9 +1,9 @@
 package app
 
 import (
-	"crud/pkg/crud/services/burgers"
-	"crud/pkg/crud/services/files"
 	"errors"
+	"github.com/AbduvokhidovRustamzhon/codeGreen/pkg/crud/services/burgers"
+	"github.com/AbduvokhidovRustamzhon/codeGreen/pkg/crud/services/files"
 	"github.com/jackc/pgx/v4/pgxpool"
 	"net/http"
 )

@@ -2,8 +2,8 @@ package burgers
 
 import (
 	"context"
-	"crud/pkg/crud/models"
 	"errors"
+	"github.com/AbduvokhidovRustamzhon/codeGreen/pkg/crud/models"
 	"github.com/jackc/pgx/v4/pgxpool"
 )
 
