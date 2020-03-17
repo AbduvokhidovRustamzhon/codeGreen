@@ -19,7 +19,7 @@ import (
 
 var (
 	host = flag.String("host", "0.0.0.0", "Server host")
-	port = flag.String("port", "9999", "Server port")
+	port = flag.String("port", "2511", "Server port")
 	dsn  = flag.String("dsn", "postgres://user:pass@192.168.99.100:5432/app", "Postgres DSN")
 )
 
