@@ -1,4 +1,4 @@
-module crud
+module github.com/AbduvokhidovRustamzhon/codeGreen
 
 go 1.13
 
