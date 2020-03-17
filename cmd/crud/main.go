@@ -15,8 +15,8 @@ import (
 	"log"
 	"net"
 	"net/http"
+	"os"
 	"path/filepath"
-	"pkg/crud/services"
 )
 
 var (
@@ -77,4 +77,10 @@ func start(addr string, dsn string) {
 
 	// server'ы должны работать "вечно"
 	panic(http.ListenAndServe(addr, server)) // поднимает сервер на определённом адресе и обрабатывает запросы
+}
+func FlagOrEnv(flag string, envKey string) (string, bool) {
+	if flag != "" {
+		return flag, true
+	}
+	return os.LookupEnv(envKey)
 }
