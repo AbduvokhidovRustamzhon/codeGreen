@@ -5,5 +5,5 @@ script:
   - go test -v ./...
 deploy:
   provider: heroku
-  api-key: $HEROKU_KEYS
+  api-key: $HEROKU_KEY
   app: dashboard.heroku.com/apps/codegreenhack
