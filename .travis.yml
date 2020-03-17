@@ -6,4 +6,4 @@ script:
 deploy:
   provider: heroku
   api-key: $HEROKU_KEY
-  app: dashboard.heroku.com/apps/codegreenhack
+  app: codegreenhack
