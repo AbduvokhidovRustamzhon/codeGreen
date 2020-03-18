@@ -7,19 +7,82 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{.Title}}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 <body>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <style>
-    body {
-        background-image: url("http://7428.net/wp-content/uploads/2013/04/Interior-Design-Bulb.jpg");
-        height: 100%;
-        color: black;
-        background-size: cover;
+    body{
+        background-image: url("https://i.pinimg.com/originals/82/0d/43/820d439ad070e679c1f152155d5feda9.jpg");
+    }
+    .container {
+        border: 1px solid #ccc;
+        width: 1500px;
+        border-radius: 5px;
+    }
+    .FlexBlock {
+        display: flex;
+        justify-content: space-between;
+    }
+    .row {
+        text-align: center;
+        font-family: Arial;
+        border-bottom: 1px solid #ccc;
+    }
+    .blockRight {
+        width: 300px;
+        border-right: 1px solid #ccc;
+        padding: 5px 10px;
+        margin: 5px 10px;
+
+    }
+    .titlefrom {
+        text-align: center;
+        font-family: Arial;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .FormInput {
+        margin: 20px;
+    }
+    .FormInput input {
+        margin-top: 10px;
+        outline: none;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: block;
+    }
+
+    .inputTwo input{
+        padding: 5px 10px;
+        width: 233px;
+    }
+    .col-4{
+        border: 7px solid ;
+        width: 250px;
+        margin: 10px;
+    }
+    .btn-secondary {
+        padding: 5px 10px;
+        margin-top: 10px;
+        width: 255px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .rightBlock {
+        display: flex;
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        width: 1150px;
+        flex-wrap: wrap;
+        margin-left: 160px;
     }
 </style>
     {{template "body" .}}
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 {{end}}

@@ -2,41 +2,47 @@
 {{template "base" . }}
 {{define "body"}}
     <div class="container">
+
         <div class="row">
-            <div style="color: lawngreen" align="center" class="col"><h1>EcoDecor</h1></div>
+           <h1>EcoDecor</h1>
         </div>
-        <div class="row">
-            <div class="col">
-                <form action="/admin/burgers/save" method="post" enctype="multipart/form-data">
-                    {{/* mime type */}}
-                    <input type="file" name="image" accept="image/*"/>
-                        <input type="hidden" name="action" value="save" >
-                        <input type="text" name="name" placeholder="Название продукта">
-                        <input type="text" name="phone" placeholder="Номер телефон продавца">
-                        <input type="number" name="price" placeholder="Цена продукта">
-                    <button  class="btn btn-secondary">Добавить</button>
-                </form>
+
+        <div class="FlexBlock">
+            <div class="blockRight">
+                <div class="titlefrom">
+                    Add your product here
+                </div>
+                    <form class="FormInput" action="/admin/burgers/save" method="post" enctype="multipart/form-data">
+                        <input type="file" name="image" accept="image/*"/>
+                        <div class="inputTwo">
+                            <input type="text" name="name" placeholder="Product's name">
+                            <input type="text" name="phone" placeholder="Manager's phone number">
+                            <input type="number" name="price" placeholder="Product's price">
+                        </div>
+                        <button  class="btn-secondary">Add</button>
+                    </form>
             </div>
-        </div>
-        {{/*  Emmet: .row > .col + Tab */}}
-        <div class="row">
-            {{ range .Burgers }}
-                <div class="col-4">
-                    <div class="card">
-                        <img src="../media/{{ .FileName }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ .Name }}</h5>
-                            <h5 class="card-title">{{ .Phone }}</h5>
-                            <p class="card-text">
-                            <h3><span class="badge badge-pill badge-danger">{{ .Price }} $</span></h3></p>
-                            <form method="post" action="/admin/burgers/remove">
-                                <input type="hidden" name="id" value="{{.Id}}">
-                                <button class="btn btn-primary">Remove</button>
-                            </form>
+            {{/*  Emmet: .row > .col + Tab */}}
+            <div class="rightBlock">
+                {{ range .Burgers }}
+                    <div class="col-6">
+                        <div class="card">
+                            <img src="../media/{{ .FileName }}" class="card-img-top" alt="..." height="250" width="250">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ .Name }}</h5>
+                                <h5 class="card-title">{{ .Phone }}</h5>
+                                <p class="card-text">
+                                <h3><span class="badge badge-pill badge-danger">{{ .Price }} $</span></h3></p>
+                                <form method="post" action="/admin/burgers/remove">
+                                    <input type="hidden" name="id" value="{{.Id}}">
+                                    <button class="btn btn-primary">Remove</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {{ end }}
+                {{ end }}
+            </div>
         </div>
+
     </div>
 {{end}}
